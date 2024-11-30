@@ -1,6 +1,12 @@
 import streamlit as st
 import numpy as np
 import tensorflow as tf
+try:
+    import cv2
+except ImportError as e:
+    import streamlit as st
+    st.error(f"Не вдалося імпортувати OpenCV: {e}")
+    raise
 import cv2
 from PIL import Image
 
